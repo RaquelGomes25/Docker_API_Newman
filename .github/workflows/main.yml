@@ -1,0 +1,19 @@
+name: docker-compose-actions-workflow
+on: 
+
+    push:
+        branches:
+        - 'main'
+        
+    workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: <<<<<-------- Running Docker API tests ------->>>>
+        run: docker-compose up
+
+
